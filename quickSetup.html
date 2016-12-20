@@ -1,0 +1,122 @@
+<!--ScienceGenius - an addon for SMART Notebook(R)
+* Copyright (C) 2016 Omid Fakourfar and SMART Technologies
+* This source code is licensed under a permissive open source license.
+* See the LICENSE file for full license text.-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="nb-2.7.0.js"></script>
+    <meta name="smart-nb-viewport" content="width: 640; height: 480;"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="./js/jquery.cookie.js"></script>
+    <link href="css/buttons.css" rel="stylesheet">
+    <title>Science Genius Rap - Presentation Design</title>
+    <style>
+      #searchResults {
+        line-height: 10;
+        -webkit-column-count: 8;
+        -webkit-column-gap:   5px;
+        -moz-column-count:    8;
+        -moz-column-gap:      5px;
+        column-count:         8;
+        column-gap:           5px;  
+      }
+
+      #searchResults img {
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      @media (max-width: 1200px) {
+        #searchResults {
+        -moz-column-count:    6;
+        -webkit-column-count: 6;
+        column-count:         6;
+        }
+      }
+      @media (max-width: 1000px) {
+        #searchResults {
+        -moz-column-count:    5;
+        -webkit-column-count: 5;
+        column-count:         5;
+        }
+      }
+      @media (max-width: 800px) {
+        #searchResults {
+        -moz-column-count:    3;
+        -webkit-column-count: 3;
+        column-count:         3;
+        }
+      }
+      @media (max-width: 400px) {
+        #searchResults {
+        -moz-column-count:    2;
+        -webkit-column-count: 2;
+        column-count:         2;
+        }
+      }
+    </style>
+  </head>
+  <body style="background-color: #ddd">
+    <div style="width: 100%; margin-left: 10px; margin-top: 10px">
+      <button type="button" id="backBtn" class="btn btn-warning btn-md" onclick="back()">Back</button>
+      <button style="margin-left: 5px;" type="button" id="homeBtn" class="btn btn-default btn-md" onclick="home()">Start Over</button>
+    </div>
+    <div>
+      <h4 style="width: 100%; background-color: #bbb; padding: 0.25em 0.25em">Quick setup!</h3>
+    </div>
+    <div>
+      <h4 style="margin-left: 10px">Give it a title:</h4>
+      <input class="form-control" style="padding: 5px; margin-left: 10px; width: 95%;" type="text" id="titleInput">
+      <h4 style="margin-left: 10px">Pick a font:</h4>
+        <div style="margin-left: 10px" class="btn-group" data-toggle="buttons">
+          <label style="font-family: 'Cooper Black'" class="btn btn-default"><input type="radio" name="fontOptions" onchange="fontSelected()" value="Cooper Black">Cooper Black</label>
+          <label class="btn btn-default"><input type="radio" onchange="fontSelected()" name="fontOptions" value="Arial">Arial</label>
+          <label style="font-family: 'Segoe Print'" class="btn btn-default"><input type="radio" onchange="fontSelected()" name="fontOptions" value="Segoe Print">Segoe Print</label>
+          <label style="font-family: 'Old English Text MT'" class="btn btn-default"><input type="radio" onchange="fontSelected()" name="fontOptions" value="Old English Text MT">Old English Text MT</label>
+          <label style="font-family: 'Algerian'" class="btn btn-default"><input type="radio" onchange="fontSelected()" name="fontOptions" value="Algerian">Algerian</label>
+          <label style="font-family: 'Impact'" class="btn btn-default"><input type="radio" onchange="fontSelected()" name="fontOptions" value="Impact">Impact</label>
+        </div>
+      <h4 style="margin-left: 10px">Pick a color scheme:</h4>
+        <div style="margin-left: 10px; visibility: hidden" id="colorChooser" class="btn-group" data-toggle="buttons">
+          <label class="btn btn-default"><input type="radio" name="themeOptions" onchange="themeSelected()" value="white">Boring White</label>
+          <label class="btn btn-black"><input type="radio" onchange="themeSelected()" name="themeOptions" value="black">Black and White</label>
+          <label class="btn btn-red"><input type="radio" onchange="themeSelected()" name="themeOptions" value="red">Anger Red</label>
+          <label class="btn btn-blue"><input type="radio" onchange="themeSelected()" name="themeOptions" value="blue">Ocean Blue</label>
+          <label class="btn btn-yellow"><input type="radio" onchange="themeSelected()" name="themeOptions" value="yellow">Lemon Yellow</label>
+          <label class="btn btn-green"><input type="radio" onchange="themeSelected()" name="themeOptions" value="green">Olive Green</label>
+        </div>
+    </div>
+
+    <div style="margin-top: 20px; width: 100%;">
+      <button type="button" id="nextPage" class="btn btn-success btn-lg btn-block" onclick="next()" style="visibility:hidden">Generate Slides!</button>
+    </div>
+    <!--<div>
+      <h4 style="width: 100%; background-color: #bbb; padding: 0.25em 0.25em">1. Design your slides, 2. Go to beginning, 3. Press Play and review your rap!</h3>
+    </div>
+    <div style="margin-left: 10px">
+      <audio id="player" src="" ontimeupdate="updateTime()">
+        <p>Your browser does not support the <code>audio</code> element.</p>
+      </audio>
+      <button type="button" class="btn btn-primary" id="setupBtn" onclick="setup()"> << Go to Beginning</button>
+      <button type="button" class="btn btn-success" id="playBtn" onclick="play()">Play</button>
+      <button type="button" class="btn btn-danger" onclick="stop()">Stop</button>
+      <span style="margin-left: 10px;" id="tracktime">00:00 / 00:00</span>
+    </div>
+
+    <form action="javascript:search()" class="form-inline" style="width: 99%; margin-left: 5px; margin-top: 10px">
+      <input class="form-control" style="padding: 5px; width: 100%;" type="text" id="searchInput">
+      <button type="button" id="searchBtn" class="btn btn-default btn-md" onclick="search()">Search Giphy</button>
+      <button type="button" id="bingBtn" class="btn btn-default btn-md" onclick="searchBing()">Search Bing</button>
+    </form>
+
+    <div id="searchResults" style="margin-top: 5px; width:80%;">
+    </div>-->
+
+    <script type="text/javascript" src="./js/quick.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+  </body>
+</html>

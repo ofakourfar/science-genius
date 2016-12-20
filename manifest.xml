@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <name>GeniusRap</name>
+  <id>com.smarttech.addon.geniusrap</id>
+  <version>1.0.0</version>
+  <description>Science Genius Rap Battle</description>
+  <company>SMART Technlogies</company>
+  <minimum-version>1.0.0</minimum-version>
+  <access-level>restricted</access-level>
+  <authors>
+    <author>SMART Technologies</author>
+  </authors>
+  <content>
+   <!-- <file path="index.html" hash="847a703b6d066aad68ad6a687e5d0fb5457800bf"/>
+    <file path="script.js" hash="b2c3d5481a51c6b0afe8ecf1e831b9f2b25a79f4"/>
+    <file path="style.css" hash="e8b20e0e4840312537e7646fa31d346e936799b9"/>-->
+  </content>
+</manifest>

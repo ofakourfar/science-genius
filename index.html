@@ -1,0 +1,104 @@
+<!--ScienceGenius - an addon for SMART Notebook(R)
+* Copyright (C) 2016 Omid Fakourfar and SMART Technologies
+* This source code is licensed under a permissive open source license.
+* See the LICENSE file for full license text.-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="nb-2.7.0.js"></script>
+    <meta name="smart-nb-viewport" content="width: 640; height: 480;"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="./js/jquery.cookie.js"></script>
+    <title>Science Genius Rap - Welcome</title>
+
+  </head>
+
+  <body style="background-color: #ddd">
+    <div>
+        <h3 style="width: 100%; background-color: #bbb; padding: 0.25em 0.25em">Welcome!</h3>
+    </div>
+    <div style="margin-left: 10px">
+      <p>
+        Dear student,<br />
+        Welcome to SMART Science Genius Rap add-on!<br />
+        Follow the step-by-step instructions on this add-on, use keywords provided by your teacher and build your very own rap song in an hour!
+      </p>
+      <p>
+        Are you ready to become the next Genius Rapper?<br />
+        Have you already made your rap song and just want to play it?<br />
+        Press Start and our system will take care of the rest!
+      </p>
+    </div>
+
+    <button type="button" id="submit" style="margin-top: 20px" class="btn btn-primary btn-lg btn-block" onclick="submit()">Start</button>
+
+    <div style="margin-left: 10px; margin-top: 100px">
+      <small><p>
+        Soundtracks:
+      </p>
+      <p>
+        "Hip-Hop beat" by JarAxe from freesound.org<br />
+        "Dre style rap loop" by stankbeast from freesound.org<br />
+        "ghettah" by booky789 from freesound.org<br />
+        "City rap beat" by stankbeast from freesound.org<br />
+        "icon.png" Icon "Voice recorder" made by Freepik from www.flaticon.com
+      </p></small>
+    </div>
+
+    <script>
+      function submit(){
+        var pageObjects = NB.page.getObjectsAsArray();
+        if (pageObjects.length == 0){
+          window.location.href = "./lyrics.html";
+        }
+        else if (typeof pageObjects[0].getCustomProperty("startTime") !== "undefined"){
+          goToFirstPage();
+          setTrackName();
+          addTimeStamps();
+          goToFirstPage();
+          window.location.href = "./last.html";
+        }
+        else {
+          window.location.href = "./lyrics.html";
+        }
+      }
+
+      function goToFirstPage(){     
+        var pages = NB.document.getPages();
+          for (id in pages){
+            NB.document.viewPreviousPage();
+          }
+      }
+
+      function setTrackName(){
+        var selectedTrack = NB.page.getObjectsAsArray()[0].getCustomProperty("trackName");
+        sessionStorage.trackName = selectedTrack;
+      }
+
+      function addTimeStamps(){
+        var timestamps = [];
+        var pageCount = 0;
+        var pages = NB.document.getPages();
+        for (id in pages){
+          pageCount++;
+          var startTime = NB.page.getObjectsAsArray()[0].getCustomProperty("startTime");
+          timestamps.push(startTime);
+          if (pageCount == pages.length)
+            break;
+          NB.document.viewNextPage();
+        }
+
+        var str = JSON.stringify(timestamps);
+        sessionStorage.timeStorage = str;
+      }
+
+    </script>
+    
+    <script src="./js/bootstrap.min.js"></script>
+    
+  </body>
+</html>

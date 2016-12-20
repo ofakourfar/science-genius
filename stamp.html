@@ -1,0 +1,66 @@
+<!--ScienceGenius - an addon for SMART Notebook(R)
+* Copyright (C) 2016 Omid Fakourfar and SMART Technologies
+* This source code is licensed under a permissive open source license.
+* See the LICENSE file for full license text.-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="nb-2.7.0.js"></script>
+    <meta name="smart-nb-viewport" content="width: 640; height: 480;"/> 
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="./js/jquery.cookie.js"></script>
+    <title>Science Genius Rap - Timestamps</title>
+    
+  </head>
+
+  <body onload="loadLyrics()" style="background-color: #ddd">
+    <div style="width: 100%; margin-left: 10px; margin-top: 10px">
+      <button type="button" id="backBtn" class="btn btn-warning btn-md" onclick="back()">Back</button>
+      <button style="margin-left: 5px;" type="button" id="homeBtn" class="btn btn-default btn-md" onclick="home()">Start Over</button>
+    </div>
+    <div>
+      <h3 style="width: 100%; background-color: #bbb; padding: 0.25em 0.25em">Play, then add time stamps!</h3>
+    </div>
+    <div style="margin-left: 10px;">
+      <audio id="player" src="" ontimeupdate="updateTime()">
+        <p>Your browser does not support the <code>audio</code> element.</p>
+      </audio>
+      <button type="button" class="btn btn-success" id="playBtn" onclick="play()">Play</button>
+      <button type="button" class="btn btn-warning" onclick="pause()">Pause</button>
+      <button type="button" class="btn btn-danger" onclick="stop()">Stop</button>
+      <span id="tracktime">00:00 / 00:00</span>
+    </div>
+
+    <div style="margin-bottom: 20px;"></div>
+
+    <div hidden id="lyrics"></div>
+
+    <div id="times"></div>
+
+    <div id ="tableDiv">
+      <table class="table table-bordered" style="table-layout: fixed; width: 100%;" id="lyricsTable">
+        <tr style="background-color:#ccc;">
+          <td style="width: 85%; font-weight: bold">Lines</td>
+          <td style="width: 15%; text-align: center; word-wrap: break-word;">Time</td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="margin-top: 20px; width: 100%;">      
+      <button type="button" id="nextLine" class="btn btn-primary btn-lg btn-block" onclick="bigBtnFunc()">Next Line</button>
+    </div>
+
+    <div style="margin-top: 20px; width: 100%;">
+      <button type="button" id="nextPage" style="visibility: hidden" class="btn btn-success btn-lg btn-block" onclick="next()">Next</button>
+    </div>
+
+    
+
+    <script type="text/javascript" src="./js/stamps.js"></script>
+    
+  </body>
+</html>

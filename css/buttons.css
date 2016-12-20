@@ -1,0 +1,234 @@
+/* ScienceGenius - an addon for SMART Notebook(R)
+*  Copyright (C) 2016 Omid Fakourfar and SMART Technologies
+*  This source code is licensed under a permissive open source license.
+*  See the LICENSE file for full license text. */
+
+.btn-black { 
+  color: #FFFFFF; 
+  background-color: #262626; 
+  border-color: #000000; 
+} 
+ 
+.btn-black:hover, 
+.btn-black:focus, 
+.btn-black:active, 
+.btn-black.active, 
+.open .dropdown-toggle.btn-black { 
+  color: #FFFFFF; 
+  background-color: #424242; 
+  border-color: #000000; 
+} 
+ 
+.btn-black:active, 
+.btn-black.active, 
+.open .dropdown-toggle.btn-black { 
+  background-image: none; 
+} 
+ 
+.btn-black.disabled, 
+.btn-black[disabled], 
+fieldset[disabled] .btn-black, 
+.btn-black.disabled:hover, 
+.btn-black[disabled]:hover, 
+fieldset[disabled] .btn-black:hover, 
+.btn-black.disabled:focus, 
+.btn-black[disabled]:focus, 
+fieldset[disabled] .btn-black:focus, 
+.btn-black.disabled:active, 
+.btn-black[disabled]:active, 
+fieldset[disabled] .btn-black:active, 
+.btn-black.disabled.active, 
+.btn-black[disabled].active, 
+fieldset[disabled] .btn-black.active { 
+  background-color: #262626; 
+  border-color: #000000; 
+} 
+ 
+.btn-black .badge { 
+  color: #262626; 
+  background-color: #FFFFFF; 
+}
+
+.btn-red { 
+  color: #FC9B97; /* Text */
+  background-color: #601816; /* Background */
+  border-color: #601816; 
+} 
+ 
+.btn-red:hover, 
+.btn-red:focus, 
+.btn-red:active, 
+.btn-red.active, 
+.open .dropdown-toggle.btn-red { 
+  color: #FC9B97; 
+  background-color: #854341; 
+  border-color: #601816; 
+} 
+ 
+.btn-red:active, 
+.btn-red.active, 
+.open .dropdown-toggle.btn-red { 
+  background-image: none; 
+} 
+ 
+.btn-red.disabled, 
+.btn-red[disabled], 
+fieldset[disabled] .btn-red, 
+.btn-red.disabled:hover, 
+.btn-red[disabled]:hover, 
+fieldset[disabled] .btn-red:hover, 
+.btn-red.disabled:focus, 
+.btn-red[disabled]:focus, 
+fieldset[disabled] .btn-red:focus, 
+.btn-red.disabled:active, 
+.btn-red[disabled]:active, 
+fieldset[disabled] .btn-red:active, 
+.btn-red.disabled.active, 
+.btn-red[disabled].active, 
+fieldset[disabled] .btn-red.active { 
+  background-color: #601816; 
+  border-color: #601816; 
+} 
+ 
+.btn-red .badge { 
+  color: #601816; 
+  background-color: #FC9B97; 
+}
+
+.btn-blue { 
+  color: #BBE2F0; 
+  background-color: #335460; 
+  border-color: #335460; 
+} 
+ 
+.btn-blue:hover, 
+.btn-blue:focus, 
+.btn-blue:active, 
+.btn-blue.active, 
+.open .dropdown-toggle.btn-blue { 
+  color: #BBE2F0; 
+  background-color: #517B8A; 
+  border-color: #335460; 
+} 
+ 
+.btn-blue:active, 
+.btn-blue.active, 
+.open .dropdown-toggle.btn-blue { 
+  background-image: none; 
+} 
+ 
+.btn-blue.disabled, 
+.btn-blue[disabled], 
+fieldset[disabled] .btn-blue, 
+.btn-blue.disabled:hover, 
+.btn-blue[disabled]:hover, 
+fieldset[disabled] .btn-blue:hover, 
+.btn-blue.disabled:focus, 
+.btn-blue[disabled]:focus, 
+fieldset[disabled] .btn-blue:focus, 
+.btn-blue.disabled:active, 
+.btn-blue[disabled]:active, 
+fieldset[disabled] .btn-blue:active, 
+.btn-blue.disabled.active, 
+.btn-blue[disabled].active, 
+fieldset[disabled] .btn-blue.active { 
+  background-color: #335460; 
+  border-color: #335460; 
+} 
+ 
+.btn-blue .badge { 
+  color: #335460; 
+  background-color: #BBE2F0; 
+}
+
+.btn-green { 
+  color: #D1FFD0; 
+  background-color: #4F604E; 
+  border-color: #4F604E; 
+} 
+ 
+.btn-green:hover, 
+.btn-green:focus, 
+.btn-green:active, 
+.btn-green.active, 
+.open .dropdown-toggle.btn-green { 
+  color: #D1FFD0; 
+  background-color: #819C80; 
+  border-color: #4F604E; 
+} 
+ 
+.btn-green:active, 
+.btn-green.active, 
+.open .dropdown-toggle.btn-green { 
+  background-image: none; 
+} 
+ 
+.btn-green.disabled, 
+.btn-green[disabled], 
+fieldset[disabled] .btn-green, 
+.btn-green.disabled:hover, 
+.btn-green[disabled]:hover, 
+fieldset[disabled] .btn-green:hover, 
+.btn-green.disabled:focus, 
+.btn-green[disabled]:focus, 
+fieldset[disabled] .btn-green:focus, 
+.btn-green.disabled:active, 
+.btn-green[disabled]:active, 
+fieldset[disabled] .btn-green:active, 
+.btn-green.disabled.active, 
+.btn-green[disabled].active, 
+fieldset[disabled] .btn-green.active { 
+  background-color: #4F604E; 
+  border-color: #4F604E; 
+} 
+ 
+.btn-green .badge { 
+  color: #4F604E; 
+  background-color: #D1FFD0; 
+}
+
+.btn-yellow { 
+  color: #605D48; 
+  background-color: #FFF8BF; 
+  border-color: #FFF8BF; 
+} 
+ 
+.btn-yellow:hover, 
+.btn-yellow:focus, 
+.btn-yellow:active, 
+.btn-yellow.active, 
+.open .dropdown-toggle.btn-yellow { 
+  color: #605D48; 
+  background-color: #C2BD94; 
+  border-color: #FFF8BF; 
+} 
+ 
+.btn-yellow:active, 
+.btn-yellow.active, 
+.open .dropdown-toggle.btn-yellow { 
+  background-image: none; 
+} 
+ 
+.btn-yellow.disabled, 
+.btn-yellow[disabled], 
+fieldset[disabled] .btn-yellow, 
+.btn-yellow.disabled:hover, 
+.btn-yellow[disabled]:hover, 
+fieldset[disabled] .btn-yellow:hover, 
+.btn-yellow.disabled:focus, 
+.btn-yellow[disabled]:focus, 
+fieldset[disabled] .btn-yellow:focus, 
+.btn-yellow.disabled:active, 
+.btn-yellow[disabled]:active, 
+fieldset[disabled] .btn-yellow:active, 
+.btn-yellow.disabled.active, 
+.btn-yellow[disabled].active, 
+fieldset[disabled] .btn-yellow.active { 
+  background-color: #FFF8BF; 
+  border-color: #FFF8BF; 
+} 
+ 
+.btn-yellow .badge { 
+  color: #FFF8BF; 
+  background-color: #605D48; 
+}
